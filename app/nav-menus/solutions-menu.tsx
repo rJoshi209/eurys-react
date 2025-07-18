@@ -43,7 +43,7 @@ export default function Solutions() {
                 {solutions.map((item) => (
                     <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4">
                         <div>
-                            <div href={item.href} className="font-semibold text-gray-800">
+                            <div className="font-semibold text-gray-800">
                                 {item.name}
                                 <ul>
                                     {item.children.map((child, index) => (

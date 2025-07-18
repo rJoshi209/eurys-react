@@ -49,7 +49,7 @@ export default function Company() {
                         {company.map((item) => (
                             <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
                                 <div>
-                                    <div href={item.href} className="font-semibold text-gray-900">
+                                    <div className="font-semibold text-gray-900">
                                         {item.name}
                                         <ul>
                                             {item.children.map((child, index) => (
