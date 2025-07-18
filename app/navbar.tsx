@@ -4,19 +4,13 @@ import {
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
     Popover,
     PopoverButton,
     PopoverPanel
 } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Solutions from './nav-menus/solutions-menu';
 import Company from './nav-menus/company-menu';
-import Home from './pages/home';
-import Link from 'next/link';
 
 const navigation = [
     { name: 'Home', href: '#', current: true },

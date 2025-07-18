@@ -1,5 +1,4 @@
-import { Listbox, Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import {
     BookOpenIcon,
     ChartPieIcon,
@@ -12,7 +11,6 @@ import {
     PresentationChartLineIcon,
     UsersIcon
 } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 
 const solutions = [
     {

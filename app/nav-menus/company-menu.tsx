@@ -1,11 +1,7 @@
-import { Listbox, Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { CPhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import {
-    ArrowPathIcon,
     ChartPieIcon,
     CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     NewspaperIcon,
     DocumentMagnifyingGlassIcon,
     HashtagIcon,
@@ -14,7 +10,6 @@ import {
     PhotoIcon,
     VideoCameraIcon
 } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 
 const company = [
     {
