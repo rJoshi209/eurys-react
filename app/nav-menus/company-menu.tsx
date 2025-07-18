@@ -42,12 +42,6 @@ const company = [
     }
 ]
 
-interface NavigationItem {
-    name: string;
-    href: string;
-    current: boolean;
-}
-
 export default function Company() {
     return (
         <div className="w-screen max-w-fit flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg ring-1 ring-gray-900/5">
