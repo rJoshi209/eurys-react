@@ -1,13 +1,27 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+"use client"; // This is a client component 
+
+import {
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    Popover,
+    PopoverButton,
+    PopoverPanel
+} from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Solutions from './nav-menus/solutions-menu';
 import Company from './nav-menus/company-menu';
+import Home from './pages/home';
+import Link from 'next/link';
 
 const navigation = [
-    { name: 'Company', href: '#', current: true },
-    { name: 'Products', href: '#', current: false },
-    { name: 'Solutions', href: '#', current: false },
-    { name: 'Contact Us', href: '#', current: false },
+    { name: 'Home', href: '#', current: true },
+    { name: 'Company', href: '#', current: false },
+    { name: 'Solutions', href: '#', current: false }
 ]
 
 function classNames(...classes: string[]) {
@@ -39,10 +53,28 @@ export default function Navbar() {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <>
-                                        {item.name === 'Solutions' && <Solutions key={`solutions-${item.name}`} item={item} />}
-                                        {item.name === 'Company' && <Company key={`company-${item.name}`} item={item} />}
-                                    </>
+                                    <div key={item.name} className="relative">
+                                        <Popover className="relative">
+                                            <PopoverButton
+                                                className="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+                                                <a
+                                                    key={item.name}
+                                                    href={item.name}
+                                                    aria-current={item.current ? 'page' : undefined}
+                                                    className={classNames(
+                                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                        'rounded-md px-3 py-2 text-sm font-medium',
+                                                    )}
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </PopoverButton>
+                                            <PopoverPanel transition className="absolute z-10 mt-5 flex w-screen max-w-max -translate-x-8 px-4 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                                                {item.name === 'Solutions' && <Solutions key={`solutions-${item.name}`} item={item} />}
+                                                {item.name === 'Company' && <Company key={`company-${item.name}`} item={item} />}
+                                            </PopoverPanel>
+                                        </Popover>
+                                    </div>
                                 ))}
                             </div>
                         </div>

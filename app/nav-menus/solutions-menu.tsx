@@ -1,12 +1,18 @@
 import { Listbox, Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import {
-    ArrowPathIcon,
+    BookOpenIcon,
     ChartPieIcon,
+    CircleStackIcon,
+    CogIcon,
     CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
+    CurrencyDollarIcon,
+    LockClosedIcon,
+    PlusIcon,
+    PresentationChartLineIcon,
+    UsersIcon
 } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const solutions = [
     {
@@ -14,10 +20,10 @@ const solutions = [
         href: '#',
         icon: ChartPieIcon,
         children: [
-            { name: 'Healthcare', href: '#', icon: ChartPieIcon },
-            { name: 'Finance', href: '#', icon: ChartPieIcon },
-            { name: 'Retail', href: '#', icon: ChartPieIcon },
-            { name: 'Education', href: '#', icon: ChartPieIcon }
+            { name: 'Healthcare', href: '#', icon: PlusIcon },
+            { name: 'Finance', href: '#', icon: CurrencyDollarIcon },
+            { name: 'Retail', href: '#', icon: PresentationChartLineIcon },
+            { name: 'Education', href: '#', icon: BookOpenIcon }
         ]
     },
     {
@@ -25,10 +31,10 @@ const solutions = [
         href: '#',
         icon: CursorArrowRaysIcon,
         children: [
-            { name: 'Data Analysis', href: '#', icon: CursorArrowRaysIcon },
-            { name: 'Automation', href: '#', icon: CursorArrowRaysIcon },
-            { name: 'Customer Engagement', href: '#', icon: CursorArrowRaysIcon },
-            { name: 'Security', href: '#', icon: CursorArrowRaysIcon }
+            { name: 'Data Analysis', href: '#', icon: CircleStackIcon },
+            { name: 'Automation', href: '#', icon: CogIcon },
+            { name: 'Customer Engagement', href: '#', icon: UsersIcon },
+            { name: 'Security', href: '#', icon: LockClosedIcon }
         ]
     }
 ]
@@ -53,63 +59,30 @@ interface SolutionsProps {
 
 export default function Solutions({ item }: SolutionsProps) {
     return (
-        <Popover className="relative">
-            <PopoverButton className="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
-                <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'rounded-md px-3 py-2 text-sm font-medium',
-                    )}
-                >
-                    {item.name}
-                </a>
-            </PopoverButton>
-
-            <PopoverPanel
-                transition
-                className="absolute z-10 mt-5 flex w-screen max-w-max -translate-x-8 px-4 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
-            >
-                <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg ring-1 ring-gray-900/5">
-                    <div className="p-4 grid grid-cols-2 gap-x-6 gap-y-8">
-                        {solutions.map((item) => (
-                            <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                                <div>
-                                    <a href={item.href} className="font-semibold text-gray-900">
-                                        {item.name}
-                                        <ul>
-                                            {item.children.map((child, index) => (
-                                                <li key={index} className="mt-2 flex items-center gap-x-2">
-                                                    <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                        <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
-                                                    </div>
-                                                    <a href={child.href} className="text-gray-600 hover:text-indigo-600">
-                                                        {child.name}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                        {callsToAction.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
-                            >
-                                <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400" />
+        <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-gray-300 text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+            <div className="p-4 grid grid-cols-2 gap-x-6 gap-y-8">
+                {solutions.map((item) => (
+                    <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4">
+                        <div>
+                            <div href={item.href} className="font-semibold text-gray-800">
                                 {item.name}
-                            </a>
-                        ))}
+                                <ul>
+                                    {item.children.map((child, index) => (
+                                        <li key={index} className="mt-4 flex items-center gap-x-4">
+                                            <div className="mt-1 flex size-7 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                                <child.icon aria-hidden="true" className="size-4 text-gray-600" />
+                                            </div>
+                                            <a href={child.href} className="text-gray-800 hover:text-orange-400">
+                                                {child.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </PopoverPanel>
-        </Popover>
+                ))}
+            </div>
+        </div>
     )
 }
