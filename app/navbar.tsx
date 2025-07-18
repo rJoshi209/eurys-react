@@ -64,8 +64,8 @@ export default function Navbar() {
                                                 </a>
                                             </PopoverButton>
                                             <PopoverPanel transition className="absolute z-10 mt-5 flex w-screen max-w-max -translate-x-8 px-4 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                                                {item.name === 'Solutions' && <Solutions key={`solutions-${item.name}`} item={item} />}
-                                                {item.name === 'Company' && <Company key={`company-${item.name}`} item={item} />}
+                                                {item.name === 'Solutions' && <Solutions key={`solutions-${item.name}`}/>}
+                                                {item.name === 'Company' && <Company key={`company-${item.name}`}/>}
                                             </PopoverPanel>
                                         </Popover>
                                     </div>
