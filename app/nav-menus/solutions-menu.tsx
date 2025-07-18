@@ -36,14 +36,6 @@ const solutions = [
         ]
     }
 ]
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 interface NavigationItem {
     name: string;
@@ -55,7 +47,7 @@ interface SolutionsProps {
     item: NavigationItem;
 }
 
-export default function Solutions({ item }: SolutionsProps) {
+export default function Solutions() {
     return (
         <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-gray-300 text-sm/6 shadow-lg ring-1 ring-gray-900/5">
             <div className="p-4 grid grid-cols-2 gap-x-6 gap-y-8">
