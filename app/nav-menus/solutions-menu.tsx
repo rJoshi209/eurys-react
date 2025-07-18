@@ -1,4 +1,3 @@
-import { PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import {
     BookOpenIcon,
     ChartPieIcon,
@@ -41,10 +40,6 @@ interface NavigationItem {
     name: string;
     href: string;
     current: boolean;
-}
-
-interface SolutionsProps {
-    item: NavigationItem;
 }
 
 export default function Solutions() {
