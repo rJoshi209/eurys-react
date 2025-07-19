@@ -18,7 +18,7 @@ export default function Home() {
         <div className="backgroundImage">
             <section className="hero">
                 <div className="hero-text">
-                    <h1>Empowergerring conversationwith AI</h1>
+                    <h1>Powering the future of Human AI Dialogue</h1>
                     <p>AI Robot acts as a next-gen guide for powering interaction between human and machine.</p>
                     <button className="hero-btn">Try Now</button>
                 </div>
