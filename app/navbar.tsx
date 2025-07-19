@@ -24,7 +24,7 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
     return (
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-gray-800 navbar-container">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -40,11 +40,11 @@ export default function Navbar() {
                         <div className="flex shrink-0 items-center">
                             <img
                                 alt="Your Company"
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto"
+                                src="./eurys-logo.png"
+                                className="h-12 w-auto"
                             />
                         </div>
-                        <div className="hidden sm:ml-6 sm:block">
+                        <div className="hidden sm:ml-6 sm:block menus">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
                                     <div key={item.name} className="relative">
@@ -74,7 +74,7 @@ export default function Navbar() {
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <button type="button" className="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">GET DEMO</button>
+                        <button type="button" className="text-white bg-orange-400 focus:ring-4 focus:orange-400 font-medium rounded-lg text-sm px-5 py-2.5 me-2">GET DEMO</button>
                     </div>
                 </div>
             </div>

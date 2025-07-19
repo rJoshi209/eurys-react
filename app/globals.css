@@ -36,15 +36,23 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.navbar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
 .hero {
     display: flex;
     justify-content: space-between;
     padding: 50px;
-    background: linear-gradient(to right, #e0eafc, #cfdef3);
 }
 
 .hero-text {
     max-width: 50%;
+    color: lightgray;
 }
 
 .hero-text h1 {
@@ -72,7 +80,7 @@ body {
 
 .features {
     padding: 40px;
-    background-color: white;
+    color: lightgray;
 }
 
 .features h2 {
@@ -88,7 +96,7 @@ body {
 }
 
 .feature-card {
-    background: #f0f4f9;
+    background: lightskyblue;
     padding: 20px;
     text-align: center;
     border-radius: 12px;
@@ -103,4 +111,20 @@ body {
 .feature-card h3 {
     margin: 10px 0 5px;
     font-size: 18px;
+    color: black;
+}
+.feature-card p {
+    color: black;
+}
+
+.menus {
+    margin-top: 8px !important;
+}
+
+.backgroundImage {
+    margin-top: 64px;
+    background-image: url('/home-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
